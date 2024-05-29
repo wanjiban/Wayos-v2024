@@ -11,7 +11,7 @@
 #
 
 ########### 更改大雕源码（可选）###########
-# sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' target/linux/x86/Makefile
 
 
 # 修改生成的固件名称include/image.mk
@@ -24,16 +24,16 @@ sed -i "/uci commit system/a uci commit network"  package/lean/default-settings/
 sed -i "/uci commit network/i uci set network.lan.ifname='eth0 eth1 eth2 eth3'"  package/lean/default-settings/files/zzz-default-settings
 sed -i "/uci commit network/i uci set network.lan.dns='61.139.2.69 223.5.5.5'"  package/lean/default-settings/files/zzz-default-settings
 sed -i "/uci commit network/i uci set network.lan.gateway='10.1.12.1'"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci set network.wan.ifname='xeth0'"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci set network.wan6.ifname='xeth0'"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci set network.wan.proto='none'"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci set network.wan.ifname='xeth0'"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci set network.wan6.ifname='xeth0'"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci set network.wan.proto='none'"  package/lean/default-settings/files/zzz-default-settings
 sed -i "/uci commit network/i uci set dhcp.lan.ignore='1'"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci delete network.wan6"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci delete network.lan.ip6assign"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit network/i uci delete network.globals.ula_prefix"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci delete network.wan6"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci delete network.lan.ip6assign"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit network/i uci delete network.globals.ula_prefix"  package/lean/default-settings/files/zzz-default-settings
 sed -i "/uci commit system/a uci commit dhcp"  package/lean/default-settings/files/zzz-default-settings
 sed -i "/uci commit dhcp/i uci delete dhcp.lan.ra"  package/lean/default-settings/files/zzz-default-settings
-sed -i "/uci commit dhcp/i uci delete dhcp.lan.dhcpv6"  package/lean/default-settings/files/zzz-default-settings
+#sed -i "/uci commit dhcp/i uci delete dhcp.lan.dhcpv6"  package/lean/default-settings/files/zzz-default-settings
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
